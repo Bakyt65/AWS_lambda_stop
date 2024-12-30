@@ -2,6 +2,6 @@ import boto3
 client = boto3.client('sns')
 def lambda_handler(event, context):
     Instance_id = event['detail']['instance-id']
-    topic_arn = 'arn:aws:sns:us-east-2:376129853443:ec2-stop'
+    topic_arn = 'Your ARN'
     message = 'your server ' + Instance_id + 'is down'
     client.publish(TopicArn=topic_arn, Message=message)
